@@ -1,6 +1,10 @@
+/**
+ *Clase que representa un peon en el juego de extincion y que hereda de Ficha
+ *@author Gil Axel Gutierrez Lara
+ *@version 1.0
+ **/
 public class Peon extends Ficha{
     public Peon(int color,int fila,int columna){
-
 	super(color,fila,columna);
     }
     public String toString(){

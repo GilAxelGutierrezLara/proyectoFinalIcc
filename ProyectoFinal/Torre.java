@@ -1,3 +1,8 @@
+/**
+ *Clase que representa una torre en el juego de extincion y que hereda de Ficha
+ *@author Gil Axel Gutierrez Lara
+ *@version 1.0
+ **/
 public class Torre extends Ficha{
     //Constructor
     public Torre(int color, int fila, int columna){

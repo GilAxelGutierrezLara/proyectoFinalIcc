@@ -1,3 +1,8 @@
+/**
+ *Clase que representa un jugador del Juego de extincion y que implementa la interfaz Constantes
+ *@author Gil Axel Gutierrez Lara
+ *@version 1.0
+ **/
 public class Jugador implements Constantes{
     String nombre;
     int color;
@@ -11,13 +16,34 @@ public class Jugador implements Constantes{
 	else
 	    posicion = 0;
 	Ficha t;
-    //Crear torres
+	//Crear torres
 	for(int i = 0;i<2;i++){
 	    t = new Torre(color,5*posicion,5*i);
 	    fichasVivas++;
 	    tablero.addFicha(5*posicion,5*i,t);
 	}
+	//Crear peones
+	for(int i=0;i<6;i++){
+	    t = new Peon(color,3*posicion+1,i);
+	    fichasVivas++;
+	    tablero.addFicha(3*posicion+1,i,t);
+	}
+	//Crear rey
+	t = new Rey(color,5*posicion,2);
+	fichasVivas++;
+	tablero.addFicha(5*posicion,2,t);
+	//Crear reina
+	t = new Reyna(color,5*posicion,3);
+	fichasVivas++;
+	tablero.addFicha(5*posicion,3,t);
+	//Crear caballos
+	for(int i=0;i<2;i++){
+	    t = new Caballo(color,5*posicion,3*i+1);
+	    fichasVivas++;
+	    tablero.addFicha(5*posicion,3*i+1,t);
+	}
     }
+    
     
     public void realizarJugada(int fI, int cI, int fF,int cF){
 	Ficha pAcomer,pAmover;
@@ -50,5 +76,8 @@ public class Jugador implements Constantes{
 	    return true;
 	else
 	    return false;
+    }
+    public int getFichasVivas(){
+	return this.fichasVivas;
     }
 }

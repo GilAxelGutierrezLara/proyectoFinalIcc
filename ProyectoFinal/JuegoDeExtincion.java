@@ -1,22 +1,26 @@
+/**
+ *Clase donde ejecutamos el juego de extincion
+ *@author Gil Axel Gutierrez Lara
+ *@version 1.0
+ **/
 import java.util.Scanner;
 public class JuegoDeExtincion{
+    /**
+     *Metodo principal 
+     *@param Args Los argumentos
+     **/
     public static void main(String[] args){
       Scanner uno= new Scanner(System.in);
       Scanner dos= new Scanner(System.in);
       Tablero tablero = new Tablero(6,6,12,12);
-      String player2 = "ia";
-      String player1 = "player1";
+      String player2;
+      String player1;
       
       Jugador p2 = new Jugador("P2",0,tablero);
       Jugador p1 = new Jugador("Gil",1,tablero);
       
       
-      System.out.println(tablero.getNumeroFichasP1());
-      tablero.mostrarTablero();
-      
      
-      
-      
       System.out.println("JUEGO DE EXTINCION");	 
       System.out.println("BIENVENIDO, SELECCIONA UNA OPCION");
       System.out.println("Si desea jugar oprima  ......  1  ");	 
@@ -54,5 +58,7 @@ public class JuegoDeExtincion{
       System.out.println("JUEGO DE EXTINCION");
       System.out.println(p1.getNombre() + " VS " +p2.getNombre());
       tablero.mostrarTablero();
+      System.out.println(p1.getFichasVivas());
+      p1.realizarJugada(4,4,4,3);
     }
 }
